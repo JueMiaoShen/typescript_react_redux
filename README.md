@@ -26,3 +26,9 @@ typescript react redux simple example
  
  tsconfig.json
  config file for typescript
+ 
+ # dev
+ npm run dev
+ 
+ # build 
+ npm run build
