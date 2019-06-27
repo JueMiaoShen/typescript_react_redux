@@ -32,7 +32,9 @@ typescript react redux simple example
  > config file for typescript
  
  # dev
+ npm i
  npm run dev
  
  # build 
+ npm i
  npm run build
