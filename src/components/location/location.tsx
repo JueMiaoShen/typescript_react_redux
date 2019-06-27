@@ -1,14 +1,17 @@
 import * as React from 'react';
-import {asyncInc} from "../../store/actions";
 import {connect} from "react-redux";
-import HomePage from "../homePage";
 import {MLocation} from "../../store/types";
 import {getLocation} from "../../store/actions/location";
+import baiduLocation from "../../utils/baidu";
+import {ak} from "../../config/config";
+
 
 interface InterfaceProps {
     lat: string,
-    lng: string
+    lng: string,
+    setLocation: (l: MLocation) => void
 }
+
 
 class MyLocation extends React.Component<InterfaceProps, {}> {
     constructor(props: InterfaceProps) {
@@ -20,6 +23,12 @@ class MyLocation extends React.Component<InterfaceProps, {}> {
     }
 
     getLocationData() {
+        setInterval(() => {
+            baiduLocation(ak, (result: any) => {
+                console.log('baidu:', result.latitude, result.longitude);
+                this.props.setLocation({lat: result.latitude, lng: result.longitude});
+            })
+        }, 5000)
 
     }
 

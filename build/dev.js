@@ -22,6 +22,6 @@ app.use(
 
 // 这个方法和下边注释的方法作用一样，就是设置访问静态文件的路径
 app.use(express.static(require('path').resolve(__dirname,'../public')));
-app.listen(8000,()=>{
-    console.log('dev server listen on 8000')
+app.listen(8001,()=>{
+    console.log('dev server listen on 8001')
 })
