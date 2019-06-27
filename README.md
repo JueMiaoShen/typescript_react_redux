@@ -16,15 +16,19 @@ typescript react redux simple example
 
 # directory description
  /build 
+ 
  Store the packaged configuration file for webpack
  
  /dist 
+ 
  output directory
  
  /public 
+ 
  store static files  for express.static
  
  tsconfig.json
+ 
  config file for typescript
  
  # dev
