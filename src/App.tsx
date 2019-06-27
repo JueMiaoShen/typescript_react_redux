@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Counter from "./components/counter";
 import {asyncInc} from "./store/actions";
 import {connect} from "react-redux";
 import {DECREMENT, INCREMENT} from "./store/types";
+import HomePage from "./components/homePage";
 
 function mapStateToProps(state: {counter:{ num: any;asyncNum:number }}) {
     console.log('state.num',state.counter.num);
@@ -15,7 +15,6 @@ function mapStateToProps(state: {counter:{ num: any;asyncNum:number }}) {
 }
 
 function mapDispatchToProps(dispatch:any) {
-   // console.log(dispatch);
     return {
         onIncreaseClick: () => dispatch(asyncInc()),
         DECREMENT: () => dispatch({type:'DECREMENT'}),
@@ -25,5 +24,6 @@ function mapDispatchToProps(dispatch:any) {
 const  App = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter);
+)(HomePage);
+
 export default App;

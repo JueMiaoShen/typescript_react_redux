@@ -6,10 +6,11 @@
 
 import * as React from "react";
 import emit from "../../utils/emitter";
+
 interface IProps {
     value: string,
     checked: boolean,
-    onChange:()=>void
+    onChange: () => void
 }
 
 
@@ -26,41 +27,45 @@ class List3Item extends React.Component<IProps> {
     }
 }
 
-
-
 interface IList3Props {
-    title:string;
-    list:{key:string,value:string,checked:boolean}[],
+    title: string;
+    list: { key: string, value: string, checked: boolean }[],
 
 }
 
 interface IList3State {
-    list:{key:string,value:string,checked:boolean}[];
+    list: { key: string, value: string, checked: boolean }[];
 }
-class List3 extends React.Component<IList3Props,IList3State>{
-    constructor(props:IList3Props){
+
+class List3 extends React.Component<IList3Props, IList3State> {
+    constructor(props: IList3Props) {
         super(props);
-        this.state={
-            list:this.props.list,
+        this.state = {
+            list: this.props.list,
         };
     }
-    onItemChange(entry:{key:string,value:string,checked:boolean}){
-        const {list}=this.state;
+
+    onItemChange(entry: { key: string, value: string, checked: boolean }) {
+        const {list} = this.state;
         this.setState({
-            list:list.map(item=>{return {key:item.key,value:item.value,checked:entry.key==item.key?!item.checked:item.checked}})
+            list: list.map(item => {
+                return {key: item.key, value: item.value, checked: entry.key == item.key ? !item.checked : item.checked}
+            })
         });
-        entry={key:entry.key,value:entry.value,checked:!entry.checked}
+        entry = {key: entry.key, value: entry.value, checked: !entry.checked};
 
 
-        emit.emit('ItemChange',entry);
+        emit.emit('ItemChange', entry);
 
     }
+
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (<div>
             <span>{this.props.title}</span>
             <ul>
-                {this.state.list.map((entry,index)=>{
-                    return <List3Item key={entry.key} value={entry.value} checked={entry.checked} onChange={this.onItemChange.bind(this,entry)}/>
+                {this.state.list.map((entry, index) => {
+                    return <List3Item key={entry.key} value={entry.value} checked={entry.checked}
+                                      onChange={this.onItemChange.bind(this, entry)}/>
                 })}
             </ul>
         </div>);
