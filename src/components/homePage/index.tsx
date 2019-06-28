@@ -6,6 +6,7 @@ import emit from "../../utils/emitter";
 import CommentsList from "../commentList/commentsList";
 import Location from "../location/location";
 import Pager from "../pager";
+import MyCanvas from "../canvas";
 
 interface Iprops {
     value: number,
@@ -71,6 +72,8 @@ export default class HomePage extends React.Component<Iprops, IState> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         const {list, list2} = this.state;
         return (<Pager>
+
+            <MyCanvas />
 
             <Location/>
 

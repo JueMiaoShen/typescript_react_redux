@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports={
     entry:{
-        app:path.resolve(__dirname,'../src/index.tsx')
+        app:path.resolve(__dirname,'../src/index.tsx'),
     },
     output: {
+        publicPath:'/',
         path: path.resolve(__dirname,'../dist'),
         filename: "main.js"
     },

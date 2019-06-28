@@ -2,9 +2,17 @@ const express=require('express');
 const webpack=require('webpack');
 const baseConfig=require('./webpack.config.js');
 const merge=require('webpack-merge');
-const webpackDevMiddleware = require("webpack-dev-middleware")
+const webpackDevMiddleware = require("webpack-dev-middleware");
+const webpackHotMiddleWare = require("webpack-hot-middleware");
+
+
 const devConfig=merge(baseConfig,{
     mode:'development',
+    plugins:[
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        //HMR  该插件必不可少
+        new webpack.HotModuleReplacementPlugin()
+    ]
 
 });
 const complier=webpack(devConfig);
@@ -18,7 +26,10 @@ app.use(
     })
 )
 
-//app.use(require("webpack-hot-middleware")(complier));
+//将编译器挂载给 webpack dev middleware
+app.use(webpackHotMiddleWare(complier, {
+    heartbeat: 2000
+}));
 
 // 这个方法和下边注释的方法作用一样，就是设置访问静态文件的路径
 app.use(express.static(require('path').resolve(__dirname,'../public')));
