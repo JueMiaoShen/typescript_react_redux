@@ -1,6 +1,8 @@
 const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到单独文件的插件
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
 module.exports={
     entry:{
         app:path.resolve(__dirname,'../src/index.tsx')
@@ -17,6 +19,10 @@ module.exports={
             {
                 test: /\.tsx?/,
                 loader: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ]
     },
@@ -31,6 +37,11 @@ module.exports={
             minify:{
                 removeComments:true //是否压缩时 去除注释
             }
+        }),
+        new MiniCssExtractPlugin(),
+        new OptimizeCssAssetsPlugin({
+            filename: "css/[name].css",//都提到build目录下的css目录中
+            chunkFilename: "[id].css"
         })
     ]
 

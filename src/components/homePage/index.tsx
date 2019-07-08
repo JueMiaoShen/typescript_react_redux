@@ -3,9 +3,9 @@ import List from "../List/List";
 import List2 from "../List/List2";
 import List3 from "../List/List3";
 import emit from "../../utils/emitter";
-import CommentsList from "../commentList/commentsList";
-import Location from "../location/location";
-import Pager from "../pager";
+import CommentsList from "../CommentList/commentsList";
+import Location from "../Location/location";
+import Pager from "../Pager";
 
 interface Iprops {
     value: number,
