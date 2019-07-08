@@ -29,7 +29,6 @@ class MyLocation extends React.Component<InterfaceProps, {}> {
                 this.props.setLocation({lat: result.latitude, lng: result.longitude});
             })
         }, 5000)
-
     }
 
 

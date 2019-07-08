@@ -5,9 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到�
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
 module.exports={
     entry:{
-        app:path.resolve(__dirname,'../src/index.tsx')
+        app:path.resolve(__dirname,'../src/index.tsx'),
     },
     output: {
+        publicPath:'/',
         path: path.resolve(__dirname,'../dist'),
         filename: "main.js"
     },

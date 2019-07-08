@@ -3,9 +3,16 @@ import List from "../List/List";
 import List2 from "../List/List2";
 import List3 from "../List/List3";
 import emit from "../../utils/emitter";
+<<<<<<< HEAD
 import CommentsList from "../CommentList/commentsList";
 import Location from "../Location/location";
 import Pager from "../Pager";
+=======
+import CommentsList from "../commentList/commentsList";
+import Location from "../location/location";
+import Pager from "../pager";
+import MyCanvas from "../canvas";
+>>>>>>> eaab88aa3ba8410bd523323a3bc56141af9365a1
 
 interface Iprops {
     value: number,
@@ -71,6 +78,8 @@ export default class HomePage extends React.Component<Iprops, IState> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         const {list, list2} = this.state;
         return (<Pager>
+
+            <MyCanvas />
 
             <Location/>
 
