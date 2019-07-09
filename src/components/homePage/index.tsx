@@ -7,6 +7,8 @@ import CommentsList from "../commentList/commentsList";
 import Location from "../location/location";
 import Pager from "../pager";
 import MyCanvas from "../canvas";
+import MInput from "../MInput";
+import axios from "axios"
 
 interface Iprops {
     value: number,
@@ -30,7 +32,8 @@ interface IState {
 
 export default class HomePage extends React.Component<Iprops, IState> {
     itemChange: any = '';
-
+    inputRef: React.RefObject<any>;
+    passwordRef: React.RefObject<any>;
     constructor(props: Iprops) {
         super(props);
         this.state = {
@@ -48,7 +51,10 @@ export default class HomePage extends React.Component<Iprops, IState> {
                 {key: 'l4', value: 'TET4', checked: false},
                 {key: 'l5', value: 'TEST5', checked: false}
             ]
-        }
+        };
+        this.inputRef=React.createRef();
+        this.passwordRef=React.createRef();
+        this.login=this.login.bind(this)
     }
 
     handleItemChange(item: { key: string, value: string, checked: boolean }) {
@@ -67,6 +73,21 @@ export default class HomePage extends React.Component<Iprops, IState> {
         emit.removeListener('ItemChange', () => {
             console.log('删除ItemChange');
         });
+    }
+
+    login(){
+        const username=this.inputRef.current.value;
+        const password=this.passwordRef.current.value;
+        axios({
+            method:'post',
+            url:'http://localhost:8080/restart/secondServlet',
+            data:{
+                username:username,
+                password:password
+            }
+        }).then((response)=>{
+            console.log(response);
+        })
     }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
@@ -89,6 +110,9 @@ export default class HomePage extends React.Component<Iprops, IState> {
             <button onClick={this.props.INCREMENT}>INCREMENT</button>
             <br/>
             <button onClick={this.props.DECREMENT}>DECREMENT</button>
+                <MInput name={'username'} InputRef={this.inputRef} title={"账号"} type={"text"}/>
+                <MInput name={'password'} InputRef={this.passwordRef} title={"密码"} type={"password"}/>
+            <button onClick={this.login}>登录</button>
 
         </Pager>);
     }
