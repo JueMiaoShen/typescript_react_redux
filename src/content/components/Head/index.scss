@@ -21,3 +21,17 @@
   background: #5c5c5c;
   width: 10%;
 }
+.active{
+  height: 6vh;
+  text-decoration:none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition:width 1s;
+  background: #5c5c5c;
+  width: 10%;
+  color: white;
+  border-bottom: white inset 2px;
+
+}

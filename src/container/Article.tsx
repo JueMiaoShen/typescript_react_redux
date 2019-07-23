@@ -2,7 +2,7 @@ import * as React from 'react';
 import {asyncInc} from "../store/actions";
 import {connect} from "react-redux";
 import {DECREMENT, INCREMENT} from "../store/types";
-import HomePage from "../content/container/HomePage";
+import Article1 from "../content/container/Article";
 
 function mapStateToProps(state: {counter:{ num: any;asyncNum:number }}) {
     console.log('state.num',state.counter.num);
@@ -20,9 +20,9 @@ function mapDispatchToProps(dispatch:any) {
         INCREMENT: () => dispatch({type:'INCREMENT'}),
     }
 }
-const  App = connect(
+const  Article = connect(
     mapStateToProps,
     mapDispatchToProps
-)(HomePage);
+)(Article1);
 
-export default App;
+export default Article;

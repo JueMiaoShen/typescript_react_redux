@@ -12,7 +12,6 @@ interface InterfaceProps {
     setLocation: (l: MLocation) => void
 }
 
-
 class MyLocation extends React.Component<InterfaceProps, {}> {
     constructor(props: InterfaceProps) {
         super(props)

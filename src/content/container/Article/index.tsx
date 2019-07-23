@@ -30,7 +30,7 @@ interface IState {
     }[],
 }
 
-export default class HomePage extends React.Component<Iprops, IState> {
+export default class Article extends React.Component<Iprops, IState> {
     itemChange: any = '';
     inputRef: React.RefObject<any>;
     passwordRef: React.RefObject<any>;
@@ -94,7 +94,9 @@ export default class HomePage extends React.Component<Iprops, IState> {
         const {list, list2} = this.state;
 
         return (<Pager>
+
             <Location/>
+
             <CommentsList promise={fetch('./response.json')}/>
             <List title={'你大爷'} list={list}/>
             <List2 title={'二大爷'} list={list2} handleItemChange={this.handleItemChange.bind(this)}/>
