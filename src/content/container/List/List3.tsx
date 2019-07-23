@@ -5,7 +5,7 @@
 * */
 
 import * as React from "react";
-import emit from "../../utils/emitter";
+import emit from "../../../utils/emitter";
 
 interface IProps {
     value: string,

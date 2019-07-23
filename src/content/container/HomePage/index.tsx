@@ -2,12 +2,12 @@ import * as React from 'react';
 import List from "../List/List";
 import List2 from "../List/List2";
 import List3 from "../List/List3";
-import emit from "../../utils/emitter";
+import emit from "../../../utils/emitter";
 import CommentsList from "../CommentList/commentsList";
-import Location from "../Location/location";
-import Pager from "../Pager";
-import MyCanvas from "../canvas";
-import MInput from "../MInput";
+import Location from "../../components/location/location";
+import Pager from "../../components/Pager";
+import MyCanvas from "../../components/Canvas";
+import MInput from "../../components/MInput";
 import axios from "axios";
 interface Iprops {
     value: number,
@@ -93,7 +93,7 @@ export default class HomePage extends React.Component<Iprops, IState> {
         const {list, list2} = this.state;
         return (<Pager>
 
-            <MyCanvas />
+          {/*  <MyCanvas />*/}
 
             <Location/>
 

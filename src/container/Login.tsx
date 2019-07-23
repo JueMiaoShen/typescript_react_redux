@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Pager from "../components/Pager";
-import Input from "../components/Input/Input";
+import Pager from "../content/components/Pager";
+import Input from "../content/components/Input/Input";
 import MHttp from "../utils/netTool";
 class Login extends React.Component{
     private myUsernameRef: React.RefObject<any>;

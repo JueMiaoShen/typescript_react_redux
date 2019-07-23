@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {connect} from "react-redux";
-import {MLocation} from "../../store/types";
-import {getLocation} from "../../store/actions/location";
-import baiduLocation from "../../utils/baidu";
-import {ak} from "../../config/config";
+import {MLocation} from "../../../store/types";
+import {getLocation} from "../../../store/actions/location";
+import baiduLocation from "../../../utils/baidu";
+import {ak} from "../../../config/config";
 
 
 interface InterfaceProps {
