@@ -17,7 +17,7 @@ class MyCanvas extends React.Component<IProps, IState> {
 
     componentDidMount(): void {
         // @ts-ignore
-        let ctx=document.getElementById("canvas").getContext('2d');
+        let ctx=document.getElementById("Canvas").getContext('2d');
        // ctx.fillRect(10,10,100,100);//实心矩阵
         ctx.strokeRect(10,10,150,150);//空心矩阵
     }

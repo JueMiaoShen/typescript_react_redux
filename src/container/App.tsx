@@ -2,7 +2,7 @@ import * as React from 'react';
 import {asyncInc} from "../store/actions";
 import {connect} from "react-redux";
 import {DECREMENT, INCREMENT} from "../store/types";
-import HomePage from "../components/homePage";
+import HomePage from "../content/container/HomePage";
 
 function mapStateToProps(state: {counter:{ num: any;asyncNum:number }}) {
     console.log('state.num',state.counter.num);
