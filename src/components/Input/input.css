@@ -1,0 +1,17 @@
+.input{
+    width: 50px;
+    transition:width 1s;
+    -moz-transition:width 1s; /* Firefox 4 */
+    -webkit-transition:width 1s; /* Safari and Chrome */
+    -o-transition:width 1s; /* Opera */
+    background: white;
+}
+.input:focus{
+    width: 100px;
+    background: cornflowerblue;
+}
+
+.input:hover{
+    width: 100px;
+    background: cornflowerblue;
+}
