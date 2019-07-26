@@ -8,6 +8,7 @@ import Head from "../content/components/Head";
 import About from "../container/About";
 import Study from "../container/Study";
 import Think from "../container/Think";
+import Sport from "../container/Sport";
 
 class  MRouter extends React.Component{
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
@@ -19,6 +20,7 @@ class  MRouter extends React.Component{
                 <Route path={"/home"} component={Home} exact/>
                 <Route path={"/article"} component={Article}/>
                 <Route path={"/about"} component={About}/>
+                <Route path={"/sport"} component={Sport}/>
                 <Route path={"/study"} component={Study}/>
                 <Route path={"/think"} component={Think}/>
                 <Route path={"/login"} component={Login}/>

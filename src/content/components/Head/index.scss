@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .navLink{
-  width: 8%;
+  width: 6%;
   color: white;
   height: 6vh;
   text-decoration:none;
@@ -19,7 +19,7 @@
 }
 .navLink:hover{
   background: #5c5c5c;
-  width: 10%;
+  width: 8%;
 }
 .active{
   height: 6vh;
@@ -30,7 +30,7 @@
   justify-content: center;
   transition:width 1s;
   background: #5c5c5c;
-  width: 10%;
+  width: 8%;
   color: white;
   border-bottom: white inset 2px;
 
