@@ -51,7 +51,16 @@ module.exports={
             chunks: ["app"], // entry中的app入口才会被打包
             hash:true,
             minify:{
-                removeComments:true //是否压缩时 去除注释
+                removeComments:true, //是否压缩时 去除注释
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
             }
         }),
         new MiniCssExtractPlugin(),
