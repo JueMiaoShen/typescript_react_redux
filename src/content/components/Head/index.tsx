@@ -69,13 +69,13 @@ class Head extends React.Component<IProps,IState>{
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         let {index}=this.state;
         return <div className={"head"}>
-                <NavLink to={"/home"} className={"navLink "+(index===0?"active":"")} onClick={()=>{this.tabClick(0)}}>首页</NavLink>
-                <NavLink to={"/article"} className={"navLink "+(index===1?"active":"")}  onClick={()=>{this.tabClick(1)}}>文章</NavLink>
-                <NavLink to={"/study"} className={"navLink "+(index===2?"active":"")}  onClick={()=>{this.tabClick(2)}}>学习</NavLink>
-                <NavLink to={"/think"} className={"navLink "+(index===3?"active":"")}  onClick={()=>{this.tabClick(3)}}>奇思妙想</NavLink>
-                <NavLink to={"/sport"} className={"navLink "+(index===4?"active":"")}  onClick={()=>{this.tabClick(4)}}>运动</NavLink>
-                <NavLink to={"/about"} className={"navLink "+(index===5?"active":"")}  onClick={()=>{this.tabClick(5)}}>关于</NavLink>
-                <NavLink to={"/login"} className={"navLink "+(index===6?"active":"")}  onClick={()=>{this.tabClick(6)}}>登录</NavLink>
+                <NavLink to={"/web/home"} className={"navLink "+(index===0?"active":"")} onClick={()=>{this.tabClick(0)}}>首页</NavLink>
+                <NavLink to={"/web/article"} className={"navLink "+(index===1?"active":"")}  onClick={()=>{this.tabClick(1)}}>文章</NavLink>
+                <NavLink to={"/web/study"} className={"navLink "+(index===2?"active":"")}  onClick={()=>{this.tabClick(2)}}>学习</NavLink>
+                <NavLink to={"/web/think"} className={"navLink "+(index===3?"active":"")}  onClick={()=>{this.tabClick(3)}}>奇思妙想</NavLink>
+                <NavLink to={"/web/sport"} className={"navLink "+(index===4?"active":"")}  onClick={()=>{this.tabClick(4)}}>运动</NavLink>
+                <NavLink to={"/web/about"} className={"navLink "+(index===5?"active":"")}  onClick={()=>{this.tabClick(5)}}>关于</NavLink>
+                <NavLink to={"/web/login"} className={"navLink "+(index===6?"active":"")}  onClick={()=>{this.tabClick(6)}}>登录</NavLink>
             </div>;
     }
 }

@@ -1,0 +1,61 @@
+.swiper {
+  position: relative;
+ // width: 300px;
+  width: 60%;
+
+  /* 下面是为了让大家看的更清楚，加的修饰 */
+ // padding: 30px 0;
+  margin: 0 auto;
+ // background: #FFB973;
+  overflow-x: hidden;
+}
+.swiper .swiper-container {
+  position: relative;
+  /* 为啥要设置-300px呢，因为我想让他默认在第二个滑块的位置，一会会给大家演示 */
+  left: 0px;
+ // left: -300px;
+  /* 让容器尽可能的宽，这样才能容纳更多的滑块 */
+  width: 10000%;
+  /* 让内部滑块可以排成一行 */
+  display: flex;
+  transition: left 0.2s ease-in-out;
+  /* 下面是为了让大家看的更清楚，加的修饰 */
+//  background: red;
+//  padding: 15px 0;
+}
+.swiper .swiper-container .swiper-item {
+  /* 宽度设置1%会按照外层视图的宽度来铺满 */
+  width: 1%;
+ // height: 300px;
+  background: #eee;
+  /* 下面是为了让大家看的更清楚，加的修饰 */
+  text-align: center;
+  //font-size: 40px;
+  color: #fff;
+}
+.swiper-item-img{
+  margin-top: 20px;
+  width: 100%;
+  height: 600px;
+}
+.swiper-navigation{
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  height: 20px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+.swiper-navigation-dot{
+  background: rgba(173, 173, 173, 0.47);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+.navigation-dot-selected{
+  background: rgba(204, 5, 113, 0.47);
+}

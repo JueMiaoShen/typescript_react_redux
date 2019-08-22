@@ -23,7 +23,7 @@ module.exports={
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader']
             },
             {
                 test: /\.scss$/,
@@ -33,6 +33,9 @@ module.exports={
                     },
                     {
                         loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                    },
+                    {
+                        loader: "postcss-loader" //
                     },
                     {
                         loader: "sass-loader" // 将 Sass 编译成 CSS
@@ -63,7 +66,13 @@ module.exports={
                 minifyURLs: true,
             }
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting ord
+        }),
         new OptimizeCssAssetsPlugin({
             filename: "css/[name].css",//都提到build目录下的css目录中
             chunkFilename: "[id].css"
