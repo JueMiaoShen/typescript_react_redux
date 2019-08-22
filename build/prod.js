@@ -1,7 +1,7 @@
 const webpack=require('webpack');
 const baseConfig=require('./webpack.config.js');
 const merge=require('webpack-merge');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const shouldUseSourceMap=false;
 const devConfig=merge(baseConfig,{
     mode:'production',
@@ -49,7 +49,11 @@ const devConfig=merge(baseConfig,{
     },
 });
 const complier=webpack(devConfig);
-complier.run(err =>{
+// complier.watch({},(data)=>{
+//     console.log("123123",data);
+// })
+complier.run((err,stats)=>{
     console.log(err);
+    console.log(stats);
     console.log('dsfsdfsdf');
 })
